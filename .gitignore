@@ -7,20 +7,16 @@
 # Ignore bundler config.
 /.bundle
 
-<<<<<<< HEAD
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
-=======
->>>>>>> 5da3c96416f07598e9e3419096540c7f08ee6466
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
 
-<<<<<<< HEAD
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
@@ -28,33 +24,8 @@
 /node_modules
 /yarn-error.log
 
-=======
-# Ignore pidfiles, but keep the directory.
-/tmp/pids/*
-!/tmp/pids/
-!/tmp/pids/.keep
-
-# Ignore uploaded files in development.
-/storage/*
-!/storage/.keep
-
->>>>>>> 5da3c96416f07598e9e3419096540c7f08ee6466
 /public/assets
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-<<<<<<< HEAD
-=======
-
-/public/packs
-/public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
-
-/coverage
-
-/config/database.yml
->>>>>>> 5da3c96416f07598e9e3419096540c7f08ee6466
