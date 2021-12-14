@@ -1,0 +1,28 @@
+<h3 class='text-muted mb-0'>
+  Комнаты
+</h3>
+
+<hr class='mt-1'>
+
+<% if @rooms.present? %>
+  <nav class='nav flex-column'>
+    <% @rooms.each do |room| %>
+      <div class='rooms-wrapper'>
+        <%= link_to room.name, room_path(room), class: 'nav-link room-nav-link', onclick: 'reload()' %>
+        <%= link_to"#{room_path(room)}/edit", class: 'room-edit' do %>
+          &#10000;
+        <% end %>
+      </div>
+    <% end %>
+  </nav>
+<% else %>
+  <div class='text-muted'>
+    Комнат пока нет, создайте новую!
+  </div>
+<% end %>
+
+<div class='mt-3'>
+  <%= link_to new_room_path, class: 'btn btn-success' do %>
+    Создать комнату
+  <% end %>
+</div>
