@@ -16,8 +16,4 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
-<<<<<<< HEAD
 //= require turbolinks
-=======
-//= require turbolinks
->>>>>>> 8690f850c08be8ca4be1de04388e7ae59ef749a1
