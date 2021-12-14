@@ -11,6 +11,7 @@
     <div class="chat" data-channel-subscribe="room" data-room-id="<%= @room.id %>">
       <% @room_messages.each do |room_message| %>
         <div class="chat-message-container">
+<<<<<<< HEAD
           <div class="row no-gutters 
                 <% if current_user.id == room_message.user.id %>
                   current-user
@@ -29,6 +30,25 @@
                 <small>
                   <%= room_message.created_at %>
                 </small>
+=======
+          <div class="row no-gutters">
+            <div class="col-auto text-center">
+              <img src="<%= room_message.user.gravatar_url %>" class="avatar" alt="">
+              <div data-role="username"><%= room_message.user.username %></div>
+            </div>
+
+            <div class="col">
+              <div class="message-content">
+                <p class="mb-1">
+                  <%= room_message.message %>
+                </p>
+
+                <div class="text-right">
+                  <small>
+                    <%= room_message.created_at %>
+                  </small>
+                </div>
+>>>>>>> 8690f850c08be8ca4be1de04388e7ae59ef749a1
               </div>
             </div>
           </div>
@@ -46,7 +66,11 @@
                                    autocomplete: 'off'
                                  } %>
         <div class="input-group-append">
+<<<<<<< HEAD
           <%= form.submit "Отправить", class: 'btn btn-success chat-input input-submit' %>
+=======
+          <%= form.submit "Отправить", class: 'btn btn-primary chat-input' %>
+>>>>>>> 8690f850c08be8ca4be1de04388e7ae59ef749a1
         </div>
       </div>
 
@@ -57,12 +81,17 @@
 
 <div class="d-none" data-role="message-template">
   <div class="chat-message-container">
+<<<<<<< HEAD
     <div class="row no-gutters" data-role="message-row">
+=======
+    <div class="row no-gutters">
+>>>>>>> 8690f850c08be8ca4be1de04388e7ae59ef749a1
       <div class="col-auto text-center">
         <img src="" class="avatar" alt="" data-role="user-avatar">
         <div data-role="user-name"></div>
       </div>
 
+<<<<<<< HEAD
       <div class="message-content">
         <p class="mb-1" data-role="message-text">
 
@@ -71,6 +100,18 @@
         <div class="text-right">
           <small data-role="message-date">
           </small>
+=======
+      <div class="col">
+        <div class="message-content">
+          <p class="mb-1" data-role="message-text">
+
+          </p>
+
+          <div class="text-right">
+            <small data-role="message-date">
+            </small>
+          </div>
+>>>>>>> 8690f850c08be8ca4be1de04388e7ae59ef749a1
         </div>
       </div>
     </div>

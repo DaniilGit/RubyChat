@@ -1,4 +1,5 @@
 $(function() {
+<<<<<<< HEAD
   $('.input-submit').hide();
   $('#room_message_message').on('input', function() {
     console.log($(this).val().trim());
@@ -18,3 +19,9 @@ function reload() {
     location.reload()
   }, 0)
 }
+=======
+  $('#new_room_message').on('ajax:success', function(a, b,c ) {
+    $(this).find('input[type="text"]').val('');
+  });
+});
+>>>>>>> 8690f850c08be8ca4be1de04388e7ae59ef749a1
