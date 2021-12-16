@@ -1,7 +1,6 @@
 $(function() {
   $('.input-submit').hide();
   $('#room_message_message').on('input', function() {
-    console.log($(this).val().trim());
     if ($(this).val().trim() == '')
       $('.input-submit').hide();
     else

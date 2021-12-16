@@ -1,4 +1,14 @@
 <%= simple_form_for @room do |form| %>
-  <%= form.input :name, label: "Название комнаты" %>
+  <div class="form-create-wrapper">
+    <%= form.input :name, label: "Название комнаты" %>
+    <label>Пользователи которых нужно добавить в комнату</label>
+    <select class="form-select form-select-lg" multiple size="3" aria-label="size 3 select example" name="users[]">
+      <% User.all.each do |user| %>
+        <% if current_user.id != user.id and !@room.user.include? user %>
+          <option value="<%= user.id %>"><%= user.username %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </div>
   <%= form.submit "Создать", class: 'btn btn-success' %>
 <% end %>

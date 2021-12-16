@@ -3,16 +3,17 @@
 </h3>
 
 <hr class='mt-1'>
-
 <% if @rooms.present? %>
   <nav class='nav flex-column'>
     <% @rooms.each do |room| %>
-      <div class='rooms-wrapper'>
-        <%= link_to room.name, room_path(room), class: 'nav-link room-nav-link', onclick: 'reload()' %>
-        <%= link_to"#{room_path(room)}/edit", class: 'room-edit' do %>
-          &#10000;
-        <% end %>
-      </div>
+      <% if room.user.all.include? current_user %>
+        <div class='rooms-wrapper'>
+          <%= link_to room.name, room_path(room), class: 'nav-link room-nav-link', onclick: 'reload()' %>
+          <%= link_to"#{room_path(room)}/edit", class: 'room-edit' do %>
+            &#10000;
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
   </nav>
 <% else %>

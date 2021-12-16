@@ -11,6 +11,8 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new permitted_parameters
+    @room.user << current_user
+    addUsers
 
     if @room.save
       flash[:success] = "Room #{@room.name} was created successfully"
@@ -30,6 +32,7 @@ class RoomsController < ApplicationController
 
   def update
     if @room.update_attributes(permitted_parameters)
+      addUsers
       flash[:success] = "Room #{@room.name} was updated successfully"
       redirect_to rooms_path
     else
@@ -39,12 +42,22 @@ class RoomsController < ApplicationController
 
   protected
 
+  def addUsers
+    if !@room_users['users'].nil?
+      # puts @room.user.inspect
+      @room_users['users'].each do |user_id|
+        @room.user << User.all.find { |user| user.id == user_id.to_i}
+      end
+    end
+  end
+
   def load_entities
     @rooms = Room.all
     @room = Room.find(params[:id]) if params[:id]
   end
 
   def permitted_parameters
+    @room_users = params.permit(:users => []).to_h
     params.require(:room).permit(:name)
   end
 end

@@ -1,5 +1,14 @@
 <h1>
-  Изменение названия <%= @room.name %>
+  Изменение комнаты "<%= @room.name %>"
 </h1>
+
+<div>
+  <div>Текущие пользователи комнаты:</div>
+  <ul class="list-group">
+    <% @room.user.all.each do |user| %>
+      <li class="list-group-item"><%= user.username %></li>
+    <% end %>
+  </ul>
+</div>
 
 <%= render partial: 'form' %>

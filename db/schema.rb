@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 2021_12_04_102347) do
     t.index ["name"], name: "index_rooms_on_name", unique: true
   end
 
+  create_table "rooms_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "room_id"
+    t.bigint "user_id"
+    t.index ["room_id"], name: "index_rooms_users_on_room_id"
+    t.index ["user_id"], name: "index_rooms_users_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

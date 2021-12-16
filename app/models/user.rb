@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :room_messages,
            dependent: :destroy
+  has_and_belongs_to_many :room
 
   def avatar_url
     avatar_id = 'https://img.icons8.com/color/48/000000/user-male-circle--v1.png'
