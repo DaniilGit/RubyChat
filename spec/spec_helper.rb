@@ -21,7 +21,7 @@ end
 SimpleCov.minimum_coverage 90
 #As of Rails 4.1, the rake db:test:* tasks are deprecated. Instead, your (test|spec)_helper.rb should include:
 
-ActiveRecord::Migration.maintain_test_schema!
+#ActiveRecord::Migration.maintain_test_schema!
 #This means that your test database will get the correct schema every time your tests run, whether you run them from a Rake task or not.
 
 RSpec.configure do |config|

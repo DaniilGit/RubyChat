@@ -1,6 +1,7 @@
 require 'spec_helper'
 # type test 1
 require_migration!
+require_migration!('create_room_user')
 
 RSpec.describe CreateRoomsUser do
   it 'migrates successfully' do
@@ -10,7 +11,6 @@ RSpec.describe CreateRoomsUser do
   
     # ... post-migration expectations
   end
-  ...
 end
 
 # type test 2

@@ -1,7 +1,47 @@
 {
   "RSpec": {
     "coverage": {
+      "/home/owlin/RubyChat/config/environment.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          null,
+          0
+        ]
+      },
+      "/home/owlin/RubyChat/config/application.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/owlin/RubyChat/config/boot.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1
+        ]
+      }
     },
-    "timestamp": 1639457693
+    "timestamp": 1639856383
   }
 }
