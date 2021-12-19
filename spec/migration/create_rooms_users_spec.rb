@@ -1,7 +1,10 @@
+# frozen_string_literal: true
 require 'spec_helper'
 # type test 1
-require_migration!
-require_migration!('create_room_user')
+#require Rails.root.join('db', 'migrate', '20211204100620_create_rooms_users.rb')
+#File.join(Rails.root, 'db/migrate/20211204100620_create_rooms_users')
+#require "./db/migrate/20211204100620_create_rooms_users"
+require Rails.root.join(*%w( db migrate 20211204100620_create_rooms_users.rb))
 
 RSpec.describe CreateRoomsUser do
   it 'migrates successfully' do

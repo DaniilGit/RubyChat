@@ -10,6 +10,8 @@ gem 'sqlite3'
 gem 'mysql2'
 gem 'factory_bot_rails'
 gem 'faker'
+gem 'execjs'
+gem 'therubyracer'
 # Use Puma as the app server
 gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
