@@ -1,9 +1,18 @@
 require:
-  - rubocop-rspec
   - rubocop-rails
+  - rubocop-performance
 
 AllCops:
   NewCops: enable
+  Exclude:
+    - '.git/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - 'spec/**/*'
+    - 'tmp/*'
+    - 'test/**/*'
+    - 'db/**/*'
 
 Style/Documentation:
   Enabled: false
@@ -17,3 +26,12 @@ Metrics/MethodLength:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'
+
+Rails:
+  Enabled: true
+
+Rails/FilePath:
+  Enabled: false 
+
+Rails/HasAndBelongsToMany:
+  Enabled: false

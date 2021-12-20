@@ -11,6 +11,6 @@ class User < ApplicationRecord
   has_and_belongs_to_many :room
 
   def avatar_url
-    avatar_id = 'https://img.icons8.com/color/48/000000/user-male-circle--v1.png'
+    'https://img.icons8.com/color/48/000000/user-male-circle--v1.png'
   end
 end

@@ -16,6 +16,9 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+./*.lock
+./app.rar
+
 
 # Ignore uploaded files in development
 /storage/*
