@@ -27,11 +27,10 @@ class RoomsController < ApplicationController
     @room_messages = @room.room_messages.includes(:user)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
-    if @room.update_attributes(permitted_parameters)
+    if @room.update(permitted_parameters)
       addUsers
       flash[:success] = "Room #{@room.name} was updated successfully"
       redirect_to rooms_path
@@ -42,12 +41,10 @@ class RoomsController < ApplicationController
 
   protected
 
-  def addUsers
-    if !@room_users['users'].nil?
-      # puts @room.user.inspect
-      @room_users['users'].each do |user_id|
-        @room.user << User.all.find { |user| user.id == user_id.to_i}
-      end
+  def add_users
+    # puts @room.user.inspect
+    @room_users['users']&.each do |user_id|
+      @room.user << User.all.find { |user| user.id == user_id.to_i }
     end
   end
 
@@ -57,7 +54,7 @@ class RoomsController < ApplicationController
   end
 
   def permitted_parameters
-    @room_users = params.permit(:users => []).to_h
+    @room_users = params.permit(users: []).to_h
     params.require(:room).permit(:name)
   end
 end
